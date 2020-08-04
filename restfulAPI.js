@@ -21,4 +21,13 @@ app.get('/products', (req, res) => {
     res.send(products);
 });
 
+app.get('/products/:id', (req, res) => {
+    products.forEach(element => {
+        if (element.id == req.params.id) {
+            res.send(element);
+        }
+    });
+    res.send('no matching item found');
+});
+
 app.listen(3000);

@@ -30,4 +30,18 @@ app.get('/products/:id', (req, res) => {
     res.send('no matching item found');
 });
 
+app.post('/products', (req, res) => {
+    if (req.body.id) {
+        products.forEach(element => {
+            if (element.id == req.body.id) {
+                res.send('id is already used, please use a different unique id');
+            }
+        });
+        products.push(req.body);
+        res.send('successfully added to the list');
+    } else {
+        res.send('please enter a valid item with a valid id');
+    }
+});
+
 app.listen(3000);

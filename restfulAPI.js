@@ -44,4 +44,19 @@ app.post('/products', (req, res) => {
     }
 });
 
+app.put('/products/:id', (req, res) => {
+    products.forEach(element => {
+        if (element.id == req.body.id) {
+            res.send('id is already used, please use a different unique id');
+        }
+    });
+    products.forEach(element => {
+        if (element.id == req.params.id) {
+            Object.assign(element, req.body);
+            res.send('item successfully updated');
+        }
+    });
+    res.send('no matching item found');
+});
+
 app.listen(3000);

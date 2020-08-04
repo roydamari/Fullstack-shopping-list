@@ -59,4 +59,14 @@ app.put('/products/:id', (req, res) => {
     res.send('no matching item found');
 });
 
+app.delete('/products/:id', (req, res) => {
+    products.forEach(element => {
+        if (element.id == req.params.id) {
+            products.splice(products.indexOf(element), 1);
+            res.send('item successfully deleted');
+        }
+    });
+    res.send('no matching item found');
+});
+
 app.listen(3000);

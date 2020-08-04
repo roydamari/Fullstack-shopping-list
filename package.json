@@ -1,0 +1,23 @@
+{
+  "name": "Fullstack-shopping-list",
+  "version": "1.0.0",
+  "description": "",
+  "main": "restfulAPI.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roydamari/Fullstack-shopping-list.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/roydamari/Fullstack-shopping-list/issues"
+  },
+  "homepage": "https://github.com/roydamari/Fullstack-shopping-list#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

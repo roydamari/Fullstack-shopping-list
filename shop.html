@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>Shopping List</h1>
+        <p id="counterWrapper">Items Left: <span id="counter"> 0</span></p>
+        <section id="control-section">
+            <input class="form-control" type="text" id="textInput" placeholder="I want to..." />
+            <button id="get" class="addButton btn btn-primary">submit</button>
+            <button id="post" class="addButton btn btn-primary">add to the list</button>
+            <button id="put" class="addButton btn btn-primary">change Product</button>
+            <button id="delete" class="addButton btn btn-danger">Delete Product</button>
+            <div id="error"></div>
+        </section>
+        <div id="sortSection">
+            <input type="text" id="search" placeholder="search for product" />
+            <button class="btn btn-danger">delete all products</button>
+        </div>
+        <div class="listContainer container-fluid"></div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

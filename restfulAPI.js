@@ -27,7 +27,7 @@ app.get(`/products/:id`, (req, res) => {
         res.send(product);
       }
     }
-  res.send("no matching item found");
+    throw new Error("no matching item found");
 });
 
 app.post("/products", (req, res) => {

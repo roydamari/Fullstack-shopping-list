@@ -73,7 +73,7 @@ const showProduct = (product) => {
   };  
 
 const product = {
-  "id": 2,
+  "id": 10,
   "item": "apple",
 };
 const postProduct = () => {

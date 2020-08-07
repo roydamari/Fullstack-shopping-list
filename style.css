@@ -1,0 +1,13 @@
+#dataContainer {
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
+#listContainer {
+    margin-right: 50%;
+}
+
+body {
+    background-color: rgb(243, 236, 227);
+}

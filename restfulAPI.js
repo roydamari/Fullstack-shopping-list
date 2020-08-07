@@ -8,11 +8,11 @@ const products = [
     item: "cheese",
   },
   {
-    id: 4,
+    id: 2,
     item: "bread",
   },
   {
-    id: 2,
+    id: 3,
     item: "cookies",
   },
 ];
@@ -34,18 +34,18 @@ app.post("/products", (req, res) => {
   if (req.body.id) {
     products.forEach((element) => {
       if (element.id == req.body.id) {
-        res.send("id is already used, please use a different unique id");
-      }
-    });
-    products.push(req.body);
-    res.send("successfully added to the list");
+        throw new Error("id is already used, please use a different unique id");
+      } 
+      });
+      products.push(req.body);
+      res.send("successfully added to the list");
   } else {
     res.send(`please enter a valid item with a valid id`);
   }
 });
 
 app.put("/products/:id", (req, res) => {
-  
+  console.log(req.params.id);
   products.forEach((element) => {
     if (element.id == req.params.id) {
       Object.assign(element, req.body);

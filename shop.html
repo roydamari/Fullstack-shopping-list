@@ -6,27 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div id="wrapper">
-        <h1>Shopping List</h1>
-        <p id="counterWrapper">Items Left: <span id="counter"> 0</span></p>
-        <section id="control-section">
-            <input class="form-control" type="text" id="textInput" placeholder="I want to..." />
-            <button id="get" class="addButton btn btn-primary">submit</button>
-            <button id="post" class="addButton btn btn-primary">add to the list</button>
-            <button id="put" class="addButton btn btn-primary">change Product</button>
-            <button id="delete" class="addButton btn btn-danger">Delete Product</button>
-            <div id="error"></div>
-        </section>
-        <div id="sortSection">
-            <input type="text" id="search" placeholder="search for product" />
-            <button class="btn btn-danger">delete all products</button>
+    <h1>Shopping List</h1>
+    <div id="controlSection">
+    <div class="form-group row">
+        <div class="col-xs-1">
+          <input class="form-control" id="textInput" type="text" placeholder="Product ID">
         </div>
-        <div class="listContainer container-fluid"></div>
+        <div class="col">
+            <button id="get" class="btn btn-success" type="submit">Import Product</button>
+      </div>
+      <div class="col" id="error" >
+  </div>
+      </div>
+    <div class="form-group row">
+        <div class="col-xs-1">
+          <input class="form-control" id="postId" type="text" placeholder="ID">
+        </div>
+        <div class="col-xs-2">
+          <input class="form-control" id="postName" type="text" placeholder="Product Name">
+        </div>
+        <div class="col">
+            <button id="post" class="btn btn-success" type="submit">Add Protuct</button>
+      </div>
+      </div>
+    <div class="form-group row">
+        <div class="col-xs-1">
+          <input class="form-control" id="putId" type="text" placeholder="ID">
+        </div>
+        <div class="col-xs-2">
+          <input class="form-control" id="putName" type="text" placeholder="Product Name">
+        </div>
+        <div class="col">
+            <button id="put" class="btn btn-success" type="submit">Update Product</button>
+      </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-xs-1">
+          <input class="form-control" id="deleteId" type="text" placeholder="ID">
+        </div>
+        <div class="col">
+            <button id="delete" class="btn btn-danger" type="submit">Delete Product From DataBase</button>
+      </div>
+      </div>
     </div>
+      <div id="listContainer" class="">
+      </div>
+      <div id="dataContainer" class="">
+          <h2>DataBase</h2>
+          <div id="tableContainer" class="">
+    </div>
+    
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="index.js"></script>
 </body>

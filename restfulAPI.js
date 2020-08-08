@@ -6,14 +6,17 @@ const products = [
   {
     id: 1,
     item: "cheese",
+    price: 3
   },
   {
     id: 2,
     item: "bread",
+    price: 1
   },
   {
     id: 3,
     item: "cookies",
+    price: 2
   },
 ];
 
@@ -24,8 +27,8 @@ app.get("/products", (req, res) => {
 app.get(`/products/:id`, (req, res) => {
     for (let product of products) {
       if (product.id === Number(req.params.id)) {
-        res.send(product);
-      }
+         res.send(product);
+      } 
     }
     throw new Error("no matching item found");
 });
@@ -40,7 +43,7 @@ app.post("/products", (req, res) => {
       products.push(req.body);
       res.send("successfully added to the list");
   } else {
-    res.send(`please enter a valid item with a valid id`);
+    throw new Error(`please enter a valid item with a valid id`);
   }
 });
 
@@ -52,7 +55,7 @@ app.put("/products/:id", (req, res) => {
       res.send("item successfully updated");
     }
   });
-  res.send("no matching item found");
+  throw new Error("no matching item found");
 });
 
 app.delete("/products/:id", (req, res) => {
@@ -62,7 +65,7 @@ app.delete("/products/:id", (req, res) => {
       res.send("item successfully deleted");
     }
   });
-  res.send("no matching item found");
+  throw new Error("no matching item found");
 });
 
 app.listen(3000);

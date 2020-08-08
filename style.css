@@ -5,9 +5,70 @@
 }
 
 #listContainer {
-    margin-right: 50%;
+    width: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.enter_div {
+    margin: 0 auto;
+    width:80%
+}
+
+#searchBar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 80%;
+    justify-content: center;
 }
 
 body {
-    background-color: rgb(243, 236, 227);
+    width: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  background-color: whitesmoke;
+  border-top: 10px solid blue;
 }
+
+
+#delBtn{
+    justify-content: flex-end;
+    display: flex;
+}
+
+#counter {
+    border: solid rgb(7, 37, 207);
+    font-size: 1em;
+    padding: 0.25em 0.5em 0.3125em;
+    color: black;
+    border-radius: 0.25em;
+    padding: 5px 20px;
+    color: #01010a;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  #totalDiv{
+    position: fixed;
+    left: 0;
+    top: 0   
+  }
+
+  #error{
+    border: solid rgb(33, 235, 15);
+    font-size: 1em;
+    padding: 0.25em 0.5em 0.3125em;
+    color: black;
+    border-radius: 0.25em;
+    padding: 5px 20px;
+    color: #01010a;
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+  }

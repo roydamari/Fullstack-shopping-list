@@ -9,7 +9,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Shopping List</h1>
+  <div class="main">
+    <h1 id="mainTitle">Shopping List</h1>
+    <div id="massageSection">
+    <div id="totalDiv" class="">
+      <h4>Total Price</h4>
+      <div id="total">
+      <p id="counter"><span id="counterNum">0</span>$</p>
+    </div>
+    </div>
+    <div id="errorDiv">
+      <h4>Status</h4>
+      <div id="errorSec">
+      <p id="error">Ok</p>
+      </div>
+    </div>
+  </div>
     <div id="controlSection">
     <div class="form-group row">
         <div class="col-xs-7">
@@ -63,21 +78,13 @@
     </div>
       <div id="listContainer">
       </div>
+    </div>
+    <div id="side">
       <div id="dataContainer">
           <h3>DataBase</h3>
-          <div id="tableContainer" class="">
+          <div id="tableContainer" class=""></div>
     </div>
-    <div id="sumPrice">
-      <div id="totalDiv" class="">
-        <h3>Total Price</h3>
-        <div id="total">
-        <p id="counter"><span id="counterNum">0</span>$</p>
-      </div>
-        <h3>Status</h3>
-        <div id="errorSec">
-        <p id="error">Ok</p>
-        </div>
-</div>
+  </div>
     
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="index.js"></script>

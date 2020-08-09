@@ -37,6 +37,7 @@ document.addEventListener("click", (e) => {
     let updateProductJson = JSON.parse(
       `{"id":${id.value}, "item":"${name.value}", "price":"${price.value}"}`
     );
+    console.log(updateProductJson);
     putProduct(id.value, updateProductJson);
   }
   if (e.target.id === "delete") {
@@ -76,8 +77,8 @@ const searchProduct = (nameId) => {
       showProduct(response.data);
     })
     .catch((error) => {
-      console.log(error.message);
-      document.getElementById("error").innerHTML = `product not found`;
+      console.error(error.response.data);
+      document.getElementById("error").innerHTML = error.response.data;
       document.getElementById("error").style.border = `solid red`;
       setTimeout(() => {
         document.getElementById("error").style.border = `solid rgb(33, 235, 15)`;
@@ -94,8 +95,8 @@ const showProduct = (product) => {
   productWrapper.classList.add("list-group");
   container.appendChild(productWrapper);
   totalCost += Number(productPrice);
-  productWrapper.innerHTML = `<div id="productWrapper" class="list-group-item"><p>item: ${productName}</p>
-  <p>price: <span class="productPrice">${productPrice}</span>$</p>
+  productWrapper.innerHTML = `<div id="productWrapper" class="list-group-item"><p>Item: ${productName}</p>
+  <p>Price: <span class="productPrice">${productPrice}</span>$</p>
   <button type="button" id="delBtn"class="btn btn-default btn-sm"> 
   <span class="glyphicon glyphicon-trash"></span></button></div>`;
   let total = document.getElementById("total");
@@ -122,7 +123,7 @@ const postProduct = (product) => {
     })
     .catch(function (error) {
       console.log(error);
-      document.getElementById("error").innerHTML = `<p>This ID elready Used</p>`;
+      document.getElementById("error").innerHTML = `<p>${error.response.data}</p>`;
       document.getElementById("error").style.border = `solid red`;
       setTimeout(() => {
         document.getElementById("error").style.border = `solid rgb(33, 235, 15)`;
@@ -144,7 +145,7 @@ const putProduct = (id, product) => {
     })
     .catch(function (error) {
       console.log(error);
-      document.getElementById("error").innerHTML = `<p>ID Not Found</p>`;
+      document.getElementById("error").innerHTML = `<p>${error.response.data}</p>`;
       document.getElementById("error").style.border = `solid red`;
       setTimeout(() => {
         document.getElementById("error").style.border = `solid rgb(33, 235, 15)`;
@@ -164,7 +165,7 @@ const deleteProduct = (id) => {
     })
     .catch((error) => {
       console.log(error);
-      document.getElementById("error").innerHTML = `<p>ID Not Found</p>`;
+      document.getElementById("error").innerHTML = `<p>${error.response.data}</p>`;
       document.getElementById("error").style.border = `solid red`;
       setTimeout(() => {
         document.getElementById("error").style.border = `solid rgb(33, 235, 15)`;
